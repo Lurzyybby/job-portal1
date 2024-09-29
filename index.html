@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портал по подбору работников</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на портал по подбору работников</h1>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Главная</a>
+            <a href="#vacancies" onclick="showSection('vacancies')">Вакансии</a>
+            <a href="#register" onclick="showSection('register')">Регистрация</a>
+            <a href="#contacts" onclick="showSection('contacts')">Контакты</a>
+        </nav>
+    </header>
+    
+    <main id="content">
+        <section id="home">
+            <h2>Найдите работу своей мечты</h2>
+            <div class="image-container">
+                <img src="https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg" alt="Работа">
+            </div>
+            <p>Здесь вы можете найти вакансии и разместить свое резюме.</p>
+        </section>
+        
+        <section id="vacancies" style="display: none;">
+            <h2>Список вакансий</h2>
+            <div class="image-container">
+                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Вакансии">
+            </div>
+            <ul>
+                <li>Разработчик JavaScript - Москва</li>
+                <li>Дизайнер UX/UI - Санкт-Петербург</li>
+                <li>Менеджер по продажам - Новосибирск</li>
+            </ul>
+        </section>
+
+        <section id="register" style="display: none;">
+            <h2>Регистрация</h2>
+            <div class="image-container">
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Регистрация">
+            </div>
+            <form id="registration-form">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" required>
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </section>
+
+        <section id="contacts" style="display: none;">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <p><strong>Телефон:</strong> +7 913 956 42 57</p>
+                <p><strong>Email:</strong> <a href="mailto:aiio@mail.ru">aiio@mail.ru</a></p>
+                <p><strong>Адрес:</strong> гюНовосиб</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Портал по подбору работников</p>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach((sec) => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+        }
+
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Регистрация прошла успешно!');
+            document.getElementById('registration-form').reset();
+            showSection('home');
+        });
+
+        // Показать главную страницу по умолчанию
+        showSection('home');
+    </script>
+</body>
+</html>
