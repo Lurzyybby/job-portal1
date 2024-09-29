@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт для работников и работодателей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007BFF;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        article {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Платформа для Работников и Работодателей</h1>
+</header>
+
+<nav>
+    <a href="#employers">Работодатели</a>
+    <a href="#employees">Работники</a>
+    <a href="#jobListings">Вакансии</a>
+    <a href="#contact">Контакты</a>
+</nav>
+
+<section id="employers">
+    <h2>Работодатели</h2>
+    <p>Здесь вы можете найти квалифицированных работников для вашей компании. Разместите вакансию и получите отклики от кандидатов.</p>
+    
+    <form id="jobForm">
+        <label for="jobTitle">Название вакансии:</label><br>
+        <input type="text" id="jobTitle" name="jobTitle" required><br><br>
+
+        <label for="jobDescription">Описание вакансии:</label><br>
+        <textarea id="jobDescription" name="jobDescription" required></textarea><br><br>
+
+        <label for="companyName">Название компании:</label><br>
+        <input type="text" id="companyName" name="companyName" required><br><br>
+
+        <button type="submit">Разместить вакансию</button>
+    </form>
+</section>
+
+<section id="employees">
+    <h2>Работники</h2>
+    <p>Ищете работу? Ознакомьтесь с актуальными вакансиями и отправьте своё резюме работодателям.</p>
+    
+    <form id="resumeForm">
+        <label for="fullName">ФИО:</label><br>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+
+        <label for="email">Электронная почта:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="resume">Ваше резюме:</label><br>
+        <textarea id="resume" name="resume" required></textarea><br><br>
+
+        <button type="submit">Отправить резюме</button>
+    </form>
+</section>
+
+<section id="jobListings">
+    <h2>Актуальные вакансии</h2>
+    <div id="listings"></div>
+</section>
+
+<section id="contact">
+    <h2>Контакты</h2>
+    <p>Если у вас есть вопросы, свяжитесь с нами по электронной почте: <a href="mailto:support@example.com">support@example.com</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Платформа для Работников и Работодателей</p>
+</footer>
+
+<script>
+    const listings = [];
+
+    document.getElementById('jobForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+
+        const title = document.getElementById('jobTitle').value;
+        const description = document.getElementById('jobDescription').value;
+        const company = document.getElementById('companyName').value;
+
+        addJob(title, company, description);
+
+        // Очистка полей формы
+        document.getElementById('jobForm').reset();
+    });
+
+    document.getElementById('resumeForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const resume = document.getElementById('resume').value;
+
+        alert(`Ваше резюме отправлено!\nФИО: ${fullName}\nEmail: ${email}`);
+
+        // Очистка полей формы
+        document.getElementById('resumeForm').reset();
+    });
+
+    function addJob(title, company, description) {
+        listings.push({ title, company, description });
+        displayJobs();
+    }
+
+    function displayJobs() {
+        const listingsDiv = document.getElementById('listings');
+        listingsDiv.innerHTML = ''; // Очищаем перед добавлением новых вакансий
+        listings.forEach(job => {
+            const article = document.createElement('article');
+            article.innerHTML = `
+                <h3>${job.title}</h3>
+                <p><strong>Компания:</strong> ${job.company}</p>
+                <p><strong>Описание:</strong> ${job.description}</p>
+            `;
+            listingsDiv.appendChild(article);
+        });
+    }
+</script>
+
+</body>
+</html>
