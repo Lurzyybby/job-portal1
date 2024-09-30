@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қазақ хандығының тарихы</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            section.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Қазақ хандығының тарихы</h1>
+            <nav>
+                <ul>
+                    <li><a href="#introduction" onclick="toggleSection('intro-text')">Кіріспе</a></li>
+                    <li><a href="#background" onclick="toggleSection('background-text')">Алғышарттар</a></li>
+                    <li><a href="#foundation" onclick="toggleSection('foundation-text')">Құрылуы</a></li>
+                    <li><a href="#development" onclick="toggleSection('development-text')">Дамуы</a></li>
+                    <li><a href="#golden-age" onclick="toggleSection('golden-age-text')">Алтын дәуірі</a></li>
+                    <li><a href="#wars" onclick="toggleSection('wars-text')">Соғыстар</a></li>
+                    <li><a href="#colonization" onclick="toggleSection('colonization-text')">Колонизация</a></li>
+                    <li><a href="#revival" onclick="toggleSection('revival-text')">Ұлттық жаңғыру</a></li>
+                    <li><a href="#legacy" onclick="toggleSection('legacy-text')">Мұра</a></li>
+                    <li><a href="#conclusion" onclick="toggleSection('conclusion-text')">Қорытынды</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="introduction" class="content">
+            <h2>Кіріспе</h2>
+            <p id="intro-text" class="hidden">Қазақ хандығы — Қазақстан тарихының маңызды бөлігі, қазақ руларының бірлестігін білдіреді.</p>
+        </section>
+
+        <section id="background" class="content">
+            <h2>Алғышарттар</h2>
+            <p id="background-text" class="hidden">Алтын Орда бөлініп, қазақ этносының қалыптасуы.</p>
+        </section>
+
+        <section id="foundation" class="content">
+            <h2>Құрылуы</h2>
+            <p id="foundation-text" class="hidden">Негізін қалаушылар: Жәнібек және Керей, бірлестіктің алғашқы қадамдары.</p>
+        </section>
+
+        <section id="development" class="content">
+            <h2>Дамуы</h2>
+            <p id="development-text" class="hidden">Хандардың билігінің нығаюы және көрші елдермен қарым-қатынас.</p>
+        </section>
+
+        <section id="golden-age" class="content">
+            <h2>Алтын дәуірі</h2>
+            <p id="golden-age-text" class="hidden">Хандықтың экономикалық және мәдени дамуы.</p>
+        </section>
+
+        <section id="wars" class="content">
+            <h2>Соғыстар</h2>
+            <p id="wars-text" class="hidden">Ресей империясымен күрес және хандықтың бөлінуі.</p>
+        </section>
+
+        <section id="colonization" class="content">
+            <h2>Колонизация</h2>
+            <p id="colonization-text" class="hidden">Ресейдің саясаты және қазақтардың өміріне әсері.</p>
+        </section>
+
+        <section id="revival" class="content">
+            <h2>Ұлттық жаңғыру</h2>
+            <p id="revival-text" class="hidden">Қазақ интеллигенциясының қалыптасуы және тәуелсіздік үшін қозғалыстар.</p>
+        </section>
+
+        <section id="legacy" class="content">
+            <h2>Мұра</h2>
+            <p id="legacy-text" class="hidden">Заманауи Қазақстанға әсері және мәдени дәстүрлер.</p>
+        </section>
+
+        <section id="conclusion" class="content">
+            <h2>Қорытынды</h2>
+            <p id="conclusion-text" class="hidden">Қазақ хандығының тарихының болашақ ұрпақ үшін маңызы.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Қазақ хандығының тарихы</p>
+        </footer>
+    </div>
+</body>
+</html>
